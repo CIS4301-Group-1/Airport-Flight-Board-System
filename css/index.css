@@ -1,0 +1,45 @@
+body {
+	background-color: #34495e;
+}
+
+.logo-container {
+	margin: 40px auto;
+	text-align: center;
+}
+
+.landing-box {
+	background: rgba(0, 0, 0, 0.3);
+	padding: 20px;
+	-webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px;
+}
+
+.landing-box h2 {
+	color: #fff;
+	font-size: 30px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.landing-box h3 {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 300;
+	text-align: center;
+	margin: 20px 0px 20px 0px;
+}
+
+.medium-button {
+	padding: 5px;
+}
+
+.medium-button input {
+	background: none;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.medium-button input:hover {
+	cursor: pointer;
+}
