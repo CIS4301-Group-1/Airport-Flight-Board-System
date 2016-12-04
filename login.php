@@ -6,7 +6,7 @@ $loginuname = $_GET["username"];
 $loginpasswd= $_GET["password"];
 
 $connection = oci_connect($username = 'asoliman',
-                          $password = 'password',
+                          $password = 'Work2hard',
                           $connection_string = '//oracle.cise.ufl.edu/orcl');
 $statement = oci_parse($connection, "SELECT password FROM users where username='$loginuname'");
 oci_execute($statement);
@@ -19,7 +19,7 @@ while($r = oci_fetch_assoc($statement)) {
 if(count($results) > 0 && $_SESSION["password"] = $loginpasswd){
 	session_start();
 	echo "LOGGED IN as $loginuname";
-	require('dashboard.html');
+	require('dashboard.php');
 }
 else{
 	echo "LOGIN FAILED";

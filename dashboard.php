@@ -1,15 +1,5 @@
 <?php session_start(); 
-
-if(!isset($_SESSION['user_id'])) {
-	$url = "index";
-	ob_end_clean(); 
-	header("Location: $url");
-	exit();
-} else {
-	$user_id = abs((int)$_SESSION['user_id']);
-	$first_name = $_SESSION['first_name'];
-}
-
+echo "HI";
 ?><!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
@@ -27,12 +17,6 @@ if(!isset($_SESSION['user_id'])) {
 	<meta name="author" content="humans.txt">
 
 	<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
-
-	<!-- Facebook Metadata /-->
-	<meta property="fb:page_id" content="" />
-	<meta property="og:image" content="" />
-	<meta property="og:description" content=""/>
-	<meta property="og:title" content=""/>
 
 	<!-- Google+ Metadata /-->
 	<meta itemprop="name" content="">
@@ -60,21 +44,19 @@ if(!isset($_SESSION['user_id'])) {
 
 <div class="row buttons">
 	<div class="six columns">
-		<a href="#" class="switch" gumby-trigger="#new-project"><div class="medium-button blue"><i class="icon-plus-squared"></i> Add Project</div></a>
+		<a href="#" class="switch" gumby-trigger="#new-project"><div class="medium-button blue"><i class="icon-plus-squared"></i> Find Flights</div></a>
 	</div>
 	<div class="six columns">
-		<a id="manage-projects"><div class="medium-button blue">Manage Projects</div></a>
+		<a id="manage-projects"><div class="medium-button blue">Manage Flights</div></a>
 	</div>
 </div>
 
 <?php
-
 // Check to see which of the following radio buttons were checked (if any)
 $task_dp_radio_checked = $task_dp_checked = '';
 $task_ip_radio_checked = $task_ip_checked = '';
 $task_rp_radio_checked = $task_rp_checked = '';
 $task_pr_radio_checked = $task_pr_checked = '';
-
 if(isset($_GET['st']) && !empty($_GET['st'])) {
 	if($_GET['st'] === "dp") {
 		$task_dp_radio_checked = ' checked';
@@ -90,13 +72,11 @@ if(isset($_GET['st']) && !empty($_GET['st'])) {
 		$task_pr_checked = ' checked="checked"';
 	}
 }
-
 // (Again) Check to see which of the following radio buttons were checked (if any)
 $project_az_radio_checked = $project_az_checked = '';
 $project_za_radio_checked = $project_za_checked = '';
 $project_rp_radio_checked = $project_rp_checked = '';
 $project_pr_radio_checked = $project_pr_checked = '';
-
 if(isset($_GET['sp']) && !empty($_GET['sp'])) {
 	if($_GET['sp'] === "az") {
 		$project_az_radio_checked = ' checked';
@@ -112,7 +92,6 @@ if(isset($_GET['sp']) && !empty($_GET['sp'])) {
 		$project_pr_checked = ' checked="checked"';
 	}
 }
-
 ?>
 
 <div class="manage-options">
@@ -201,29 +180,20 @@ if(isset($_GET['sp']) && !empty($_GET['sp'])) {
 </div>
 
 <?php
-
 	require_once('includes/mysqli_connect.php');
-
 	
 	$p = "SELECT ... FROM ... WHERE ... AND ... ORDER BY ...";
 	$p_r = @mysqli_query($mysqli, $p);
-
 	if(@mysqli_num_rows($p_r) == 0) {
-
 		echo '<div class="row"><div class="centered twelve columns"><p>No records found!</p></div></div>';
-
 	} else {
-
 		$index = 0;
-
 		while($current_project = @mysqli_fetch_assoc($p_r)) {
 			
 			// Pull each record one at a time
 			
 		}
-
 	}
-
 ?>
 
 	<script>
