@@ -24,8 +24,11 @@ h1, h2, h3, h4, h5, h6, p {
 	display: none;
 }
 
-
-
+.medium-button.green {
+	color: #fff;
+	background: #00A600;
+	border-bottom: 5px solid #008A00;
+}
 
 /** Media Queries **/
 

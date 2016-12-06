@@ -1,0 +1,3 @@
+# This is htaccess for CISE server
+AddHandler cgi-script .php
+DirectoryIndex index.php index.html

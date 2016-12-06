@@ -5,8 +5,10 @@
 $loginuname = $_GET["username"];
 $loginpasswd= $_GET["password"];
 
-$connection = oci_connect($username = 'asoliman',
-                          $password = 'Work2hard',
+// we can just require includes/oracle_connection.php instead of making new connection every time (see index.php for example)
+
+$connection = oci_connect($username = 'ctf',
+                          $password = 'PASSWORD',
                           $connection_string = '//oracle.cise.ufl.edu/orcl');
 $statement = oci_parse($connection, "SELECT password FROM users where username='$loginuname'");
 oci_execute($statement);
